@@ -34,8 +34,10 @@ def pregunta_07():
     return(tbl0.groupby("_c1")["_c2"].sum())
 
 def pregunta_08():
-    tbl0["suma"]=tbl0.sum(axis=1, numeric_only=True)
-    return(tbl0)
+    suma=tbl0.sum(axis=1, numeric_only=True)
+    tbl00 = tbl0.copy()
+    tbl00["suma"]=suma
+    return(tbl00)
 
 def pregunta_09():
     tbl0['year']=list(map(lambda x: x[0:4], list(tbl0.loc[:,"_c3"])))
